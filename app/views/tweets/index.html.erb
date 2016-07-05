@@ -2,14 +2,16 @@
 <% @tweets.each do |tweet| %>
     
 
+<div align="center">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= tweet.video %>" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= tweet.video %>" frameborder="0" allowfullscreen></iframe><br>
+<span class="glyphicon glyphicon-user">ユーザー名</span>
+</div>
 
 
-
-<%= simple_format(tweet.text) %>
 <span><%= tweet.name %></span>
-    
+<%= simple_format(tweet.text) %>
+</div>
 <% end %>
 
 </div>
