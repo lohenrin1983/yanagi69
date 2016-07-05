@@ -1,0 +1,15 @@
+<div class="contents row">
+<% @tweets.each do |tweet| %>
+    
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= tweet.video %>" frameborder="0" allowfullscreen></iframe>
+
+
+
+<%= simple_format(tweet.text) %>
+<span><%= tweet.name %></span>
+    
+<% end %>
+
+</div>
