@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160705063601) do
     t.text     "text",       limit: 65535
     t.text     "video",      limit: 65535
     t.integer  "user_id",    limit: 4
+    t.text     "title",      limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end

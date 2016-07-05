@@ -1,4 +1,7 @@
 <div class="contents row">
+<%= raw @test %>
+
+
 <% @tweets.each do |tweet| %>
     
 
@@ -8,6 +11,9 @@
 <span class="glyphicon glyphicon-user">ユーザー名</span>
 </div>
 
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UtoReZlTvu4"></iframe>
+</div>
 
 <span><%= tweet.name %></span>
 <%= simple_format(tweet.text) %>

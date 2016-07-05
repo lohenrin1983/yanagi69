@@ -5,7 +5,7 @@ class CreateTweets < ActiveRecord::Migration
         t.text        :text
         t.text        :video
         t.integer     :user_id
-
+        t.text        :title
       t.timestamps 
     end
   end
