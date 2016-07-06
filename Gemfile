@@ -49,3 +49,8 @@ gem 'pry-rails'
 gem 'compass-rails','~> 2.0'
 gem 'sprockets', '2.11.0'
 gem 'devise', '4.1.0'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery', '1.11.3'
+  gem 'rails-assets-jquery-ujs'
+  gem 'rails-assets-bootstrap-sass-official', '3.3.5'
+end

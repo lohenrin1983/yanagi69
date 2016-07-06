@@ -1,22 +1,32 @@
 <div class="contents row">
+<%if false%>
 <%= raw @test %>
-
-
+<% end %>
 <% @tweets.each do |tweet| %>
-    
 
 <div align="center">
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= tweet.video %>" frameborder="0" allowfullscreen></iframe><br>
-<span class="glyphicon glyphicon-user">ユーザー名</span>
 </div>
 
-<div class="embed-responsive embed-responsive-4by3">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UtoReZlTvu4"></iframe>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= tweet.title %></h3>
+  </div>
+  <button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-user" 
+  aria-hidden="true"></span> 太
+</button>
+
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">投稿者コメント</div>
+  <div class="panel-body">
+    <%= simple_format(tweet.text) %>
+  </div>
 </div>
 
-<span><%= tweet.name %></span>
-<%= simple_format(tweet.text) %>
+
 </div>
 <% end %>
 
