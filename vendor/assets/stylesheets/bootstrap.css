@@ -6331,4 +6331,19 @@ button.close {
     display: none !important;
   }
 }
+// Variables
+@link-color:       @brand-primary;
+@link-hover-color: darken(@link-color, 15%);
+
+// Usage
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: underline;
+  }
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
