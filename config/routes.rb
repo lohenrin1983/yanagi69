@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'tweets' => 'tweets#index'
   get 'tweets/new'  =>  'tweets#new'
   post  'tweets'      =>  'tweets#create'    
-
-
+  get   'users/:id'   =>  'users#show'
+  delete  'tweets/:id'  => 'tweets#destroy'
   #ツイート投稿機能
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

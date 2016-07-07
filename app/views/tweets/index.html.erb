@@ -13,11 +13,12 @@
   <div class="panel-heading">
     <h3 class="panel-title"><%= tweet.title %></h3>
   </div>
+  <a href="/users/<%= tweet.user_id %>">
   <button type="button" class="btn btn-default btn-lg">
   <span class="glyphicon glyphicon-user" 
-  aria-hidden="true"></span> 太
-</button>
-
+  aria-hidden="true"></span> <%= tweet.user.nickname %>
+  </button>
+  </a>
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">投稿者コメント</div>

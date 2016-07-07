@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   
   before_action :move_to_index, except: :index
   def index
-     @tweets = Tweet.order("created_at DESC").page(params[:page]).per(5)
+     @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     #test = %!<iframe width="560" height="315" src="https://www.youtube.com/embed/UtoReZlTvu4" frameborder="0" allowfullscreen></iframe>!
     #@test = test
   end
@@ -10,8 +10,14 @@ class TweetsController < ApplicationController
     
   end
   def create
-      Tweet.create(tweet_params)
+      Tweet.create(title: tweet_params[:title], video: tweet_params[:video], text: tweet_params[:text], user_id: current_user.id)
     end
+   def destroy
+      tweet = Tweet.find(params[:id])
+      if tweet.user_id == current_user.id
+        tweet.destroy
+      end
+   end
 
     private
     def tweet_params

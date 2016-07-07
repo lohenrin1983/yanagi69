@@ -1,0 +1,39 @@
+<div align="center">
+<p><%= @nickname %>さんの投稿一覧</p>
+</div>
+<% @tweets.each do |tweet| %>
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= tweet.video %>" frameborder="0" allowfullscreen></iframe><br>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <h3 class="panel-title"><%= tweet.title %></h3>
+  </div>
+  <a href="/users/<%= tweet.user_id %>">
+  <button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-user" 
+  aria-hidden="true"></span> <%= tweet.user.nickname %>
+  </button>
+  </a>
+  <% if user_signed_in? && current_user.id == tweet.user_id %>
+　<div class="dropdown">
+  <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    オプション
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %></li>
+    <li><a href="#">編集</a></li>
+  </ul>
+</div>
+  <% end %>
+  </div>
+  <div class="panel panel-default">
+  <div class="panel-heading">投稿者コメント</div>
+  <div class="panel-body">
+    <%= simple_format(tweet.text) %>
+  </div>
+</div>
+<% end %>
+
+<%= paginate(@tweets) %>
