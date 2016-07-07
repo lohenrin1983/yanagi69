@@ -1,0 +1,11 @@
+<div align="center">
+  <%= form_tag("/tweets/#{@tweet.id}", method: :patch) do %>
+    <h3>
+      編集する
+    </h3>
+    <input class= "form-control" placeholder="タイトルを入力してください" type="text" name="title">
+    <input class= "form-control" placeholder="動画のURLを入力してください" type="text" name="video">
+    <textarea class= "form-control" name="text" placeholder="コメントを入力してください" rows="3"></textarea>
+    <button type="submit" class="btn btn-default">編集</button>
+  <% end %>
+</div>

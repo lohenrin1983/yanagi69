@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   root  'tweets#index'
+  # resources :tweets
   get 'tweets' => 'tweets#index'
   get 'tweets/new'  =>  'tweets#new'
   post  'tweets'      =>  'tweets#create'    
   get   'users/:id'   =>  'users#show'
   delete  'tweets/:id'  => 'tweets#destroy'
+  get   'tweets/:id/edit'  => 'tweets#edit'
+  patch   'tweets/:id'  => 'tweets#update'
+  get 'tweets/:id'      =>  'tweets#show'
   #ツイート投稿機能
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
