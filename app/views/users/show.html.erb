@@ -15,7 +15,7 @@
   aria-hidden="true"></span> <%= tweet.user.nickname %>
   </button>
   </a>
-  <%= link_to 'コメントする', "/tweets/#{tweet.id}", method: :get %>
+  <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
   <% if user_signed_in? && current_user.id == tweet.user_id %>
 　<div class="dropdown">
   <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
