@@ -39,7 +39,7 @@
         </div>
     <% @comments.each do |comment| %>
         <div class="panel panel-default">
-            <a href="/users/#{comment.user_id}">
+            <a href="/users/<%= comment.user_id %>">
             <button type="button" class="btn btn-default btn-lg">
             <span class="glyphicon glyphicon-user" 
              aria-hidden="true"></span> <%= comment.user.nickname %>
