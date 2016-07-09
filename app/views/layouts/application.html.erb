@@ -23,21 +23,22 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">ランキング<span class="sr-only">(current)</span></a></li>
+          <li><a href="/tweets/ranking">ランキング<span class="sr-only">(current)</span></a></li>
           <li><a href="#">使い方<span class="sr-only">(current)</span></a></li>
-        
         </ul>
-        <form class="navbar-form navbar-left" role="search">
+        <%= form_tag('/tweets/search', {method: :get, class: "navbar-form navbar-left"}) do %>
+          
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+          　<input type="text" class="form-control" placeholder="Search" name="keyword" value="">
           </div>
           <button type="submit" class="btn btn-default">検索</button>
-        </form>
+        　</form>
+        <% end %>
    <% if user_signed_in? %>
      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.nickname %><span class="caret"></span></a>
-          <ul class="dropdown-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role  ="button" aria-haspopup="true" aria-expanded="false"><%= current_user.nickname %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
             <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <li><a href="/tweets/new">投稿する</a></li>

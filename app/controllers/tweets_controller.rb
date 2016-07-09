@@ -31,6 +31,13 @@ class TweetsController < ApplicationController
      @tweet = Tweet.find(params[:id])
      @comments = @tweet.comments.includes(:user)
    end
+    def ranking
+      tweet_ids = Comment.group(:tweet_id).order('count_tweet_id DESC').limit(20).count(:tweet_id).keys
+      @ranking = tweet_ids.map{ |id| Tweet.find(id)}
+    end
+    def search
+      @tweet = Tweet.where('title LIKE(?)', "%#{params[:keyword]}%")
+    end
     private
     def tweet_params
       # video = video

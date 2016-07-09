@@ -1,9 +1,9 @@
-<div class="contents row">
-<%if false%>
-<%= raw @test %>
-<% end %>
-<% @tweets.each do |tweet| %>
 
+<div align="center">
+<p class="bg-warning">検索結果</p>
+</div>
+
+<% @tweet.each do |tweet| %>
 <div align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= tweet.video %>" frameborder="0" allowfullscreen></iframe><br>
 </div>
@@ -27,5 +27,3 @@
 </div>
 </div>
 <% end %>
-<%= paginate(@tweets) %>
-</div>
