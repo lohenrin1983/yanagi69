@@ -6331,11 +6331,12 @@ button.close {
     display: none !important;
   }
 }
-// Variables
-@link-color:       @brand-primary;
+
+/*Variables*/
+@link-color: @brand-primary;
 @link-hover-color: darken(@link-color, 15%);
 
-// Usage
+/*// Usage*/
 a {
   color: @link-color;
   text-decoration: none;
