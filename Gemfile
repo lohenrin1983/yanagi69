@@ -50,3 +50,12 @@ gem 'compass-rails','~> 2.0'
 gem 'sprockets', '2.11.0'
 gem 'devise', '4.1.0'
  gem 'kaminari'
+
+ group :production, :staging do
+  gem 'rails_12factor'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
