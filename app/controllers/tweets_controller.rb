@@ -42,8 +42,12 @@ class TweetsController < ApplicationController
     def tweet_params
       # video = video
       # video.slice!(1..32)
+      # video = video.match()
+    
+      video = params[:video]
+      video.slice!("https://www.youtube.com/watch?v=")
       params.permit(:title, :video, :text)  
-
+      
     end
 
     def move_to_index
