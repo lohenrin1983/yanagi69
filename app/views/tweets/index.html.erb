@@ -17,7 +17,9 @@
   aria-hidden="true"></span> <%= tweet.user.nickname %>
   </button>
   </a>
+  <% if user_signed_in? %>
   <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
+  <% end %>
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">投稿者コメント</div>

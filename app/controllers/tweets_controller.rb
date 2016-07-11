@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   
-  before_action :move_to_index, except: :index
+   before_action :move_to_index, only: :new 
+
   def index
      @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     #test = %!<iframe width="560" height="315" src="https://www.youtube.com/embed/UtoReZlTvu4" frameborder="0" allowfullscreen></iframe>!
@@ -37,6 +38,9 @@ class TweetsController < ApplicationController
     end
     def search
       @tweet = Tweet.where('title LIKE(?)', "%#{params[:keyword]}%")
+    end
+    def detail
+      
     end
     private
     def tweet_params
